@@ -1,0 +1,8 @@
+version: '3'
+services:
+  href-counter:
+    build:
+      context: .
+      dockerfile: Dockerfile.multi
+    image: href-counter:1.0
+

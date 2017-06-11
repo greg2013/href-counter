@@ -21,3 +21,35 @@ $ url=http://blog.alexellis.io/ go run app.go
 
 $ url=http://blog.alexellis.io/golang-json-api-client/ go run app.go
 {"internal":17,"external":15}
+
+
+# with docker-compose
+```
+docker-compose up
+docker run --rm -e url=http://www.cnn.com href-counter:1.0
+```
+
+# Tips
+https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+
+## Removing Docker Images
+---
+Remove dangling images
+
+`docker rmi $(docker images -f dangling=true -q)`
+
+Remove all images
+
+`docker rmi $(docker images -a -q)`
+
+## Removing Containers
+---
+Run and Remove:
+
+`docker run --rm image_name`
+
+Remove all exited containers
+
+`docker rm $(docker ps -a -f status=exited -q)`
+
+
